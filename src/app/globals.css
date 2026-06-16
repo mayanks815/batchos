@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ----------------------------------------------------
+   Midnight Theme (Default)
+   - Dark, deep black, premium violet/indigo glow
+---------------------------------------------------- */
+.theme-midnight, :root:not([class*="theme-"]) {
+  --bg-app: #030712;
+  --bg-card: rgba(15, 23, 42, 0.65);
+  --bg-sidebar: #090d16;
+  --bg-header: rgba(3, 7, 18, 0.85);
+  --border-main: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+  --border-accent: #8b5cf6;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #8b5cf6;
+  --accent-hover: #a78bfa;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --premium-glow: 0 8px 30px -4px rgba(139, 92, 246, 0.25);
+  --glass-blur: 16px;
+  --btn-gradient: linear-gradient(135deg, #8b5cf6 0%, #4f46e5 100%);
+  --btn-glow: rgba(139, 92, 246, 0.4);
+}
+
+/* ----------------------------------------------------
+   Paper Theme
+   - Clean, bright white, high-end editorial paper
+---------------------------------------------------- */
+.theme-paper {
+  --bg-app: #f4f4f5;
+  --bg-card: #ffffff;
+  --bg-sidebar: #eaeaea;
+  --bg-header: rgba(244, 244, 245, 0.85);
+  --border-main: #e4e4e7;
+  --border-hover: #cbd5e1;
+  --border-accent: #f97316;
+  --text-primary: #09090b;
+  --text-secondary: #27272a;
+  --text-muted: #71717a;
+  --accent: #f97316;
+  --accent-hover: #fb923c;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.03);
+  --premium-glow: 0 8px 30px -4px rgba(249, 115, 22, 0.2);
+  --glass-blur: 0px;
+  --btn-gradient: linear-gradient(135deg, #f97316 0%, #f43f5e 100%);
+  --btn-glow: rgba(249, 115, 22, 0.3);
+}
+
+/* ----------------------------------------------------
+   Neo Theme
+   - High-contrast bold brutalist retro
+---------------------------------------------------- */
+.theme-neo {
+  --bg-app: #080a13;
+  --bg-card: #121829;
+  --bg-sidebar: #0b0d18;
+  --bg-header: rgba(8, 10, 19, 0.9);
+  --border-main: #000000;
+  --border-hover: #3b82f6;
+  --border-accent: #84cc16;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --accent: #84cc16;
+  --accent-hover: #bef264;
+  --card-shadow: 4px 4px 0px 0px #000000;
+  --premium-glow: 6px 6px 0px 0px #84cc16;
+  --glass-blur: 0px;
+  --btn-gradient: linear-gradient(135deg, #3b82f6 0%, #84cc16 100%);
+  --btn-glow: rgba(59, 130, 246, 0.4);
+}
+
+/* ----------------------------------------------------
+   Glass Theme
+   - Ultimate glassmorphism, blurred backdrop panels
+---------------------------------------------------- */
+.theme-glass {
+  --bg-app: #080312;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-sidebar: rgba(10, 5, 20, 0.4);
+  --bg-header: rgba(8, 3, 18, 0.6);
+  --border-main: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.15);
+  --border-accent: #c084fc;
+  --text-primary: #f3e8ff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #a78bfa;
+  --accent: #c084fc;
+  --accent-hover: #d8b4fe;
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --premium-glow: 0 8px 32px 0 rgba(168, 85, 247, 0.25);
+  --glass-blur: 24px;
+  --btn-gradient: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+  --btn-glow: rgba(168, 85, 247, 0.4);
+}
+
+:root {
+  --font-sans: 'Outfit', sans-serif;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+
+  /* Override Tailwind core colors to adapt to active themes */
+  --color-slate-950: var(--bg-app);
+  --color-slate-900: var(--bg-card);
+  --color-slate-850: var(--border-main);
+  --color-slate-800: var(--border-main);
+  --color-slate-700: var(--border-hover);
+  --color-slate-650: var(--text-muted);
+  --color-slate-605: var(--text-muted);
+  --color-slate-600: var(--text-muted);
+  --color-slate-505: var(--text-muted);
+  --color-slate-500: var(--text-muted);
+  --color-slate-455: var(--text-muted);
+  --color-slate-450: var(--text-secondary);
+  --color-slate-400: var(--text-secondary);
+  --color-slate-355: var(--text-secondary);
+  --color-slate-350: var(--text-secondary);
+  --color-slate-300: var(--text-primary);
+  --color-slate-205: var(--text-primary);
+  --color-slate-200: var(--text-primary);
+  --color-slate-100: var(--text-primary);
+  
+  --color-indigo-955: var(--bg-app);
+  --color-indigo-950: var(--bg-card);
+  --color-indigo-900: var(--border-main);
+  --color-indigo-650: var(--accent);
+  --color-indigo-600: var(--accent);
+  --color-indigo-500: var(--accent);
+  --color-indigo-450: var(--accent-hover);
+  --color-indigo-400: var(--accent-hover);
+  --color-indigo-300: var(--text-primary);
+
+  /* Custom named utilities */
+  --color-app-bg: var(--bg-app);
+  --color-card-bg: var(--bg-card);
+  --color-sidebar-bg: var(--bg-sidebar);
+  --color-header-bg: var(--bg-header);
+  --color-border-main: var(--border-main);
+  --color-border-hover: var(--border-hover);
+  --color-border-accent: var(--border-accent);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-color: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
+  --radius-3xl: 24px;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-main);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* iOS Safe Area Helper */
+.pb-safe-bottom {
+  padding-bottom: calc(env(safe-area-inset-bottom) + 0.25rem);
+}
+
+/* ----------------------------------------------------
+   Status Badge Keyframes & Classes
+---------------------------------------------------- */
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+}
+@keyframes glow-blue {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(59, 130, 246, 0.4)); }
+  50% { filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.7)); }
+}
+@keyframes glow-red {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(239, 68, 68, 0.4)); }
+  50% { filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.7)); }
+}
+@keyframes glow-amber {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4)); }
+  50% { filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.7)); }
+}
+
+.badge-ongoing {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  animation: pulse-green 2s infinite;
+}
+
+.badge-upcoming {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  animation: glow-blue 2.5s infinite;
+}
+
+.badge-urgent {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  animation: glow-red 1.8s infinite;
+}
+
+.badge-pinned {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  animation: glow-amber 2.2s infinite;
+}
+
+/* ----------------------------------------------------
+   Premium Card and Button Utilities
+---------------------------------------------------- */
+.premium-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-main);
+  box-shadow: var(--card-shadow);
+  border-radius: 24px; /* rounded-3xl */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.premium-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--premium-glow);
+}
+
+.premium-button {
+  background: var(--btn-gradient);
+  color: #ffffff !important;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px 0 var(--btn-glow);
+}
+
+.premium-button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px 0 var(--btn-glow), var(--premium-glow);
+}
