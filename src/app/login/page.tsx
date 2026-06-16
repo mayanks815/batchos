@@ -260,6 +260,37 @@ export default function LoginPage() {
           </button>
         </form>
 
+        {/* Try Demo Accounts Section */}
+        <div className="mt-5 pt-4 border-t border-slate-800/40">
+          <span className="block text-[9px] text-slate-500 font-bold tracking-widest uppercase text-center mb-2.5">
+            Try Demo Accounts
+          </span>
+          <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                setActiveTab('signin');
+                setEmail('admin@batchos.test');
+                setPassword('BatchOS@Admin123');
+              }}
+              className="flex-1 py-2 px-1 rounded-xl bg-white/5 hover:bg-white/10 active:bg-white/15 backdrop-blur-md border border-white/5 hover:border-white/15 text-slate-300 hover:text-white text-[10px] font-semibold transition-all duration-300 shadow-inner cursor-pointer text-center"
+            >
+              Login as Demo Admin
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setActiveTab('signin');
+                setEmail('student@batchos.test');
+                setPassword('BatchOS@Student123');
+              }}
+              className="flex-1 py-2 px-1 rounded-xl bg-white/5 hover:bg-white/10 active:bg-white/15 backdrop-blur-md border border-white/5 hover:border-white/15 text-slate-300 hover:text-white text-[10px] font-semibold transition-all duration-300 shadow-inner cursor-pointer text-center"
+            >
+              Login as Demo Student
+            </button>
+          </div>
+        </div>
+
         {/* Separator */}
         <div className="relative flex py-5 items-center">
           <div className="flex-grow border-t border-slate-850"></div>
